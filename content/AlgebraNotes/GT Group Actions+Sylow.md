@@ -1,0 +1,73 @@
+---
+title: GT Group Actions+Sylow
+draft: false
+tags: []
+description: ""
+---
+
+# GT Group Actions+Sylow
+ - for a group $G$ and a nonempty set $X$, we say that $G$ **acts on** the set $X$ or that there exists a **group action** of $G$ on $X$ if there exists a function $$\begin{align*} G \times X &\to X \\ (g,x) &\mapsto g \cdot x \end{align*}$$ such that
+	 - for each $g, h \in G$ and for each $x \in X$ we have that $g \cdot (h \cdot x) = (gh) \cdot x$
+	 - for each $x \in X$, we have that $e \cdot x = x$
+ - **Examples of Group Actions**
+	 - for integer $n$, the group $S_n$ acts on the set $\{1 \cdots n \}$ via $\sigma \cdot i = \sigma(i)$
+	 - the group $G$ acts on the set $G$ via $g \cdot x = gx$ (left multiplication)
+	 - the group $G$ acts on the set $G$ via $g \cdot x = gxg^{-1}$ (conjugation)
+	 - for a group $G$ and any nonempty set $X$, we have the *trivial action* defined by $g \cdot x = x \; \forall g \in G \; \forall x \in X$ 
+ - for group $G$, nonempty set $X$, let $S_X$ be the symmetric group on the set $X$ - then $$\begin{align*} \varphi: G &\to S_X\\ g &\mapsto \sigma_g \end{align*}$$ is a group homomorphism, called the *permutation representation* of the group action. Conversely, if $\varphi: G \to S_X$ is a group homomorphism, then the function $$\begin{align*} G \times X &\to X \\(g,x) &\mapsto g \cdot x = \varphi(g)(x)\end{align*}$$ is an action of $G$ on $X$.
+ - Let $G$ be a group acting on a nonempty set $X$ and let $\varphi: G \to S_X$ be the corresponding permutation representation
+	 - Let $Y \subseteq X$. For $g \in G$, let $g \cdot Y = \{g \cdot y : y \in Y\}$. The **stabilizer in $G$ of $Y$** is $$\text{Stab}_G(Y) = G_Y =\{ g \in G: g \cdot Y = Y\}$$If $Y = \{x\}$ is a singleton, we write $\text{Stab}_G(x) = G_x$
+	 - The **fixator** in $G$ of $Y$ is the set $$ \text{Fix}_G(Y) = \{ g \in G : g \cdot y = y \; \forall y \in Y \} = \bigcap_{y \in Y} G_y $$
+		 - $\text{Stab}_G(Y), \text{Fix}_G(Y) \le G$
+	 - the **kernel** of the action of $G$ on $X$ is the set $$ \ker \varphi = \{ g \in G : \varphi(g) = \text{id}_X\} = \{ g \in G:  g \cdot x = x \; \forall x \in X  \} = \bigcap_{x \in X} G_x $$The action of $G$ on $X$ is **faithful** if $\ker(\varphi) = \{ e\}$, i.e. if $\sigma_g \ne id_X$ for all non identity elements $g \in G$ 
+	 - the action of $G$ on $X$ is **free**, or $G$ **acts freely on $X$** if $G_x = \{ e \} \; \forall x \in X$, or if for each $x \in X$, we have that $g \cdot x = x$ only when $g = e$.
+	 - given $x \in X$, the $G$-**orbit** of $x$ is the set $G \cdot x = \{ g \cdot x : g \in G\}$.
+		 - the action of $G$ on $X$ is **transitive** if there is only one $G$-orbit in $X$
+ - **Orbit-Stabilizer Theorem**: Let $G$ be a group acting on a non-empty set $X$ with $x \in X$. Then the function $$\begin{align*} \psi: G/G_x &\to G \cdot x \\ g G_x &\mapsto g \cdot x \end{align*}$$ is a bijection and therefore $[G: G_x] = |G \cdot x|$
+	 - Corollary: The distinct $G$-orbits in $X$ form a partition
+	 - Corollary: If $|X|$ finite and if $G \cdot x_1, G \cdot x_2, \cdots, G \cdot x_r$ are the distinct $G$-orbits in $X$, we have $$|X| = \sum_{i=1}^r |G \cdot x_i| = \sum_{i=1}^r [G : G_{x_i}]$$
+ - ***Cayley's Theorem***: If $G$ is a finite group of order $n$, then $G$ is isomorphic to a subgroup of $S_n$.
+	 - if $G$ is a finite simple group and $H \le G$ proper subgroup with $[G:H]=n$, then $|G|$ divides $n!$
+	 - if $G$ is a finite group with $H \le G$ and $[G: H]= p$ is the smallest prime in the prime factorization of $|G|$, then $H \trianglelefteq G$
+ - For a group $G$, two elements $x,y \in G$ are **conjugate** if there exists a $g \in G$ such that $y = gxg^{-1}$. Given $x \in G$, the set $G \cdot x = \{ gxg^{-1}: g \in G \}$ is the **conjugacy class** of $x$ in $G$.
+	 - for $x \in G$, we have that $$\begin{align*} \text{Stab}_G(x) &= \{ g \in G : g x g^{-1}= x\} = \{ g \in G : gx = xg \} = C_G(x)\\ &\implies |G \cdot x | = [G : \text{Stab}_G(x)] = [G: C_G(x)]\end{align*}$$
+	 - note that $G \cdot x = x \iff C_G(x) = G \iff x \in Z(G)$ - we say that a conjugacy class $G \cdot x$ is *non-central* if $x \not\in Z(G)$ 
+ - **The Class Equation**: Let $G$ be a finite group and $x_1 \cdots x_s$ be representatives from the distinct non-central conjugacy classes in $G$. We then have $$|G| = |Z(G)| + \sum_{i=1}^r |G \cdot x_i| = |Z(G)| + \sum_{i=1}^r [G:C_G(x_i)]$$
+	 - corollary: if $|G| = p^n$, then $Z(G) \ne \{e\}$
+	 - corollary: if $|G| = p^2$, then $G \cong \mathbb{Z}_{p^2}$ or $\mathbb{Z}_p \times \mathbb{Z}_p$ 
+ - conjugacy in $S_n$
+	 - If $\sigma \in S_n$ is a product of disjoint cycles of lengths $k_1 \le k_2 \le \cdots \le k_r$, then the list $k_1 \cdots k_r$ is the *cycle type* of $\sigma$
+	 - let $\sigma=(a_1, a_2, \cdots, a_m) \in S_n$ be an $m$-cycle and let $\tau \in S_n$ - then $\tau \circ \sigma \circ \tau^{-1} = (\tau(a_1), \tau(a_2), \cdots, \tau(a_m))$ 
+	 - two permutations in $S_n$ are conjugate iff they have the same cycle type
+	 - ***if $n \ge 5$, then $A_n$ is simple***
+ - For a group $G$, an **automorphism** of $G$ is a group isomorphism $\alpha:G \to G$. The set of all automorphisms of $G$ is denoted $\text{Aut}(G)$ - note that $\text{Aut}(G)$ is a group under function composition; 
+ - examples of automorphisms
+	 - We have the two automorphisms of $\mathbb{Z}$ are the identity map and the map $x \mapsto -x$; we therefore have $\text{Aut}(\mathbb{Z}) = \{ \pm 1\} \cong \mathbb{Z}_2$ 
+	 - automorphism group of abelian group need not be abelian; for example $\text{Aut}(V_4) = S_3$ (here, $V_4 = \{ e, (12)(34), (13)(24), (14)(23) \} \cong \mathbb{Z}_2 \times \mathbb{Z}_2$ is the **Klein 4-group**)
+	 - let $\mathbb{Z}_n$ be a cyclic group of order $n$ - we then have $\text{Aut}(\mathbb{Z}_n) \cong (\mathbb{Z}/n\mathbb{Z})^\times$
+ - Given $g \in G$, define $$\begin{align*} \kappa_g: G &\to G \\ x &\mapsto gxg^{-1}\end{align*}$$ Note that $\kappa_g \in \text{Aut}(G)$. An automorphism $\varphi \in \text{Aut}(G)$ is called **inner** if $\varphi = \kappa_g$ for some $g \in G$. The set $$ \text{Inn}(G) = \{ \kappa_g : g \in G \} $$ is a subgroup of $\text{Aut}(G)$, called the **inner automorphism group of $G$**. 
+	 - for any group $G$, we have $G/Z(G) \cong \text{Inn}(G)$ and $\text{Inn}(G) \trianglelefteq \text{Aut}(G)$
+	 - $\text{Inn}(G) = \{ \text{id}_G\} \iff G = Z(G)$
+	 - $Z(G) = \{e\} \iff G \cong \text{Inn}(G)$
+	 - for $n \ge 3,  n \ne 6$, $S_n \cong \text{Inn}(S_n) \cong \text{Aut}(S_n)$, for $n=6$, $\text{Aut}(S_6) / \text{Inn}(S_6) \cong \mathbb{Z}_2$ 
+	 - as $V_4$ is abelian, $Z(V_4) = V_4$ and $\text{Inn}(V_4) \cong V_4 / Z(V_4) = \{ \text{id} \}$; however, we have $\text{Aut}(V_4) \cong S_3$
+- A subgroup $H \le G$ is a **characteristic subgroup** of $G$, denoted $H \text{ char } G$ if $\alpha(H) = H \; \forall \alpha \in \text{Aut}(G)$; i.e. $H$ is fixed by every automorphism of $G$
+	- for any group $G$, we have $Z(G) \text{ char } G$, $[G,G] \text{ char } G$ 
+	- if $U \le H \le G$  subgroups, then $$\begin{align*} H \text{ char } G &\implies H \trianglelefteq G \\ U \text{ char } H, H \text{ char } G  &\implies H U \text{ char } G  \\ U \text{ char } H, H \trianglelefteq G  &\implies U \trianglelefteq G \end{align*}$$
+- Sylow theorems
+	- A group of order $p^n$ is called a **p-group**
+	- a subgroup $H$ of $G$ is a **Sylow $p$-subgroup** if it is a p-group and it is maximal among the p-subgroups of  $G$ (i.e. if $P$ is a p-subgroup of $G$ with $H \le P$, then $H = P$) - the set of all Sylow p-subgroups of $G$ is denoted $\text{Syl}_p(G)$
+	- examples
+		- if $G$ is p-group, then $\text{Syl}_p(G) = \{ G \}$ 
+		- if $p \;  \not| \; |G|$, then $\text{Syl}_p(G) = \{ \{ e\}\}$ 
+		- if $|G|=p^e m$ with $p \not| m$ and if $|H| = p^e$ with $H \le G$, then $H$ is a Sylow p-subgroup
+		- if $G \cong \mathbb{Z}_{p_1^{s_1}} \times \cdots \times \mathbb{Z}_{p_r^{s_r}}$ for prime powers $p_1^{s_1},  \cdots, p_r^{s_r}$ then $\text{Syl}_P(G) = \{ P\}$ where $P$ is the subgroup of $G$ obtained by taking the cyclic factors for which $p_i = p$
+		- let $G = S_3$ - any 2-subgroup of $G$ must have order 1 or 2; we therefore have that $\text{Syl}_2(S_3) = \{ \langle (12)\rangle, \langle (13) \rangle, \langle (23) \rangle \}$
+		- similarly, $\text{Syl}_3(S_3) = \{ \langle (123) \rangle \}$ 
+	- if $p^n \; | \; |G|$, then there exists a subgroup $U \le G$ with $|U| = p^n$ - if $p^n$ is the largest power of $p$ dividing $|G|$, then there exists a Sylow p-subgroup of $G$ of order $p^n$.
+	- **Cauchy's Theorem**: For any finite group $G$, if prime $p | \; |G|$, then there exists $g \in G$ with $|g| = p$. 
+	- ***Sylow's Theorem***: Let $|G| = p^em$ with $p \not\div m$. Then
+		- if $P, P' \in \text{Syl}_p(G)$, then $P' = gPg^{-1}$ for some $g \in G$ - specifically, we have that $|P| = |P'|$
+		- if $P \in \text{Syl}_p(G)$, then $|\text{Syl}_p(G)| = [G:N_G(P)]$ divides $m$
+		- $|\text{Syl}_p(G)| \equiv 1 \bmod p$
+	- Corollary: Let $P \in \text{Syl}_p(G)$. Then $P \trianglelefteq G \iff \text{Syl}_p(G) = \{ P \}$

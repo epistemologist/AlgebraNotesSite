@@ -9,7 +9,7 @@ description: ""
  - A set $R$ is a **ring** if it has two operations $+, \cdot: R \times R \to R$ such that
 	 - $(R, +)$ is a commutative group
 	 - $\cdot$ is associative (i.e. $(R, \cdot)$ is a *monoid*)
-	 - $$ \begin{aligned} a \cdot (b+c) &= a \cdot b + a\cdot c \\ (a+b) \cdot c &= a \cdot c  + b \cdot c \end{aligned} \; \; \forall a,b,c \in R$$
+	 - $$ \begin{align*} a \cdot (b+c) &= a \cdot b + a\cdot c \\ (a+b) \cdot c &= a \cdot c  + b \cdot c \end{align*} \; \; \forall a,b,c \in R$$
 	 - if $\cdot$ has neutral element $1_R$, the ring is called **unitary**
 	 - if $\cdot$ is commutative, then the ring is **commutative**
 - The set of invertible elements under multiplication in a unitary ring is called the set of **units** (i.e. $U(R) = \{ a \in R :  \exists b \in R \; (a \cdot b = b \cdot a = 1_R) \}$) 
@@ -30,7 +30,7 @@ description: ""
 	- $S = \{ f: [0,1] \to \mathbb{R}, f \text{ continuous}\}$ w/ pointwise addition and multiplication is a commutative unitary ring
 	- let $D \in \mathbb{Q}$ with $\sqrt{D} \not\in \mathbb{Q}$ - then the set $\mathbb{Q}[\sqrt{D}]= \{ a+b\sqrt{D}: a,b \in \mathbb{Q} \}$ is a *field*
 	- *Claim*: any subring of a field is an integral domain
-- For any ring $R$, we have $$\forall a,b \in R: \begin{aligned} 0 \cdot a = a \cdot 0 = 0 \\ (-a)b = a(-b) = -(ab) \\ (-a)(-b) = ab \\ 1 \in R \implies (-1)(-a) = a \end{aligned}$$
+- For any ring $R$, we have $$\forall a,b \in R: \begin{align*} 0 \cdot a = a \cdot 0 = 0 \\ (-a)b = a(-b) = -(ab) \\ (-a)(-b) = ab \\ 1 \in R \implies (-1)(-a) = a \end{align*}$$
 - A subset $S \subseteq R$ ring is a **subring** if $(S, +_R, \cdot_R)$ is a ring.
 	- $\mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}$ are subrings, $\mathbb{Q} \subseteq \mathbb{Q}[\sqrt{D}] \subseteq \mathbb{C}$
 	- A subset $S \subseteq R$ is a subring iff $(S, +) \le (R, +)$ is a subgroup and $(S, \cdot) <  (R, \cdot)$ is a subsemigroup

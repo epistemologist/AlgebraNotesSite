@@ -17,15 +17,15 @@ description: ""
 | $\mathbb{Z}_2 \times \mathbb{Z}_4$   | $\langle (1,1) \rangle \cong \mathbb{Z}_4$ |
 | $\mathbb{R} \times \mathbb{Z}_5$     | $\langle (1,1)\rangle \cong \mathbb{Z}$    |
 - We define the **characteristic** of a ring $R$ to be $0$ if the characteristic ring $S \cong \mathbb{Z}$ or $n$ if $S \cong \mathbb{Z}_n$
-- For two rings $R, S$, a map $\varphi: R \to S$ is a **ring homomorphism** if $$\begin{align*} \varphi(x+y) &= \varphi(x) + \varphi(y) \; \forall x,y \in R \\ \varphi(xy) &= \varphi(x) \varphi(y) \; \forall x,y \in R \\ \varphi(1_R) &= \varphi(1_S) && \text{$R$, $S$ have 1} \end{align*} $$
-	- $\begin{align*} \varphi: \mathbb{Z} &\to \mathbb{Z}/5\mathbb{Z} \\ x &\mapsto x \bmod 5\end{align*}$ is a ring homomorphism
-	- $\begin{align*} \varphi: \mathbb{Z} &\to \mathbb{Z} \\ x &\mapsto 3x\end{align*}$ is *not* a ring homomorphism as $\varphi(xy) = 3xy \ne 3x \cdot 3y = \varphi(x) \varphi(y)$ 
-- Let $\varphi: R \to S$ be a ring homomorphism. Then $$ \begin{align*}\ker \varphi = \{ x \in R : \varphi(x) = 0\} \subseteq R  \\ \text{im}\;\varphi = \{ \varphi(x) : x \in R\} \subseteq S \end{align*}$$ are subrings.
+- For two rings $R, S$, a map $\varphi: R \to S$ is a **ring homomorphism** if $$\begin{aligned} \varphi(x+y) &= \varphi(x) + \varphi(y) \; \forall x,y \in R \\ \varphi(xy) &= \varphi(x) \varphi(y) \; \forall x,y \in R \\ \varphi(1_R) &= \varphi(1_S) && \text{$R$, $S$ have 1} \end{aligned} $$
+	- $\begin{aligned} \varphi: \mathbb{Z} &\to \mathbb{Z}/5\mathbb{Z} \\ x &\mapsto x \bmod 5\end{aligned}$ is a ring homomorphism
+	- $\begin{aligned} \varphi: \mathbb{Z} &\to \mathbb{Z} \\ x &\mapsto 3x\end{aligned}$ is *not* a ring homomorphism as $\varphi(xy) = 3xy \ne 3x \cdot 3y = \varphi(x) \varphi(y)$ 
+- Let $\varphi: R \to S$ be a ring homomorphism. Then $$ \begin{aligned}\ker \varphi = \{ x \in R : \varphi(x) = 0\} \subseteq R  \\ \text{im}\;\varphi = \{ \varphi(x) : x \in R\} \subseteq S \end{aligned}$$ are subrings.
 - Recall that if $\varphi: R \to S$ is a group homomorphism, then $\ker \varphi$ is a normal subgroup - we additionally have the property that $R \cdot \ker\varphi, \ker\varphi \cdot R \subseteq \ker \varphi$ - any subring $I \subseteq R$ with this property (i.e. $RI, IR \subseteq I$) is called an **ideal**, denoted $I \triangleleft R$. 
 	- Note if only $RI \subseteq I$, then $I$ is a **left ideal** of $R$
 	- If only $IR \subseteq I$, then $I$ is a **right ideal** of $R$.
-- Let $I \triangleleft R$ be an ideal. Then we have that $I \trianglelefteq (R, +)$ is a normal subgroup - we can therefore construct the quotient group $R / I = \{ a + I : a \in R\}$. We can similarly define multiplication on cosets: $$ \begin{align*} \cdot : R/I \times R/I &\to R/I \\ a+I, b+I &\mapsto ab+I \end{align*}$$ This endows $R/I$ with a ring structure - we have **quotient rings** similar to quotient groups
-- The map $$\begin{align*}\varphi: R &\to R/I \\ a &\mapsto a+I\end{align*}$$ is a surjective ring homomorphism with $\ker \varphi = I$; we therefore have that all ideals are kernels of some ring homomorphism.
+- Let $I \triangleleft R$ be an ideal. Then we have that $I \trianglelefteq (R, +)$ is a normal subgroup - we can therefore construct the quotient group $R / I = \{ a + I : a \in R\}$. We can similarly define multiplication on cosets: $$ \begin{aligned} \cdot : R/I \times R/I &\to R/I \\ a+I, b+I &\mapsto ab+I \end{aligned}$$ This endows $R/I$ with a ring structure - we have **quotient rings** similar to quotient groups
+- The map $$\begin{aligned}\varphi: R &\to R/I \\ a &\mapsto a+I\end{aligned}$$ is a surjective ring homomorphism with $\ker \varphi = I$; we therefore have that all ideals are kernels of some ring homomorphism.
 - Similar to the Isomorphism Theorems for groups, we also have Isomorphism Theorems for rings
 - **Fundamental Isomorphism Theorem for Rings**: For any ring homomorphism $\phi: R \to S$, we have that $R / \ker \phi \cong \text{im} \phi$ 
 - Some examples:

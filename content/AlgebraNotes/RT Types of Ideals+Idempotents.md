@@ -1,0 +1,23 @@
+
+- An ideal $I$ of a commutative ring $R$ is a **prime ideal** if for any $a,b \in R$, we have $ab \in I \implies a \in I \text{ or } b \in I$.
+	- $I \triangleleft R$ noncommutative is prime if $\forall I_1, I_2 \triangleleft R$, if $I_1 I_2 \subseteq R$, then at least one of $I_1, I_2$ is contained in $R$
+- For a commutative ring $R$, $I \triangleleft R$ is a prime ideal iff $R/I$ is a domain
+	- for example, all prime ideals of $\mathbb{Z}$ are all ideals $n\mathbb{Z} \triangleleft \mathbb{Z}$   such that $\mathbb{Z} /n \mathbb{Z}$ is a domain (this is the case when $n$ is a prime)
+	- similarly, all prime ideals of $\mathbb{Z}_{360} = \mathbb{Z}_{2^3 \cdot  3^2 \cdot 5}$ are $180 \mathbb{Z}_{360} \cong \mathbb{Z}_2, 120 \mathbb{Z}_{360} \cong \mathbb{Z}_3, 72 \mathbb{Z}_{360} \cong \mathbb{Z}_5$
+	- as $\mathbb{Z}[x]/(2,x) \cong \mathbb{Z}_2$ is a domain, $(2,x)$ is a prime ideal
+	- as $\mathbb{Q}[x,y] /(x,y) \cong \mathbb{Q}$ is a domain, $(x,y)$ is a prime ideal
+- A proper ideal $M$ of a ring $R$ (i.e. $M \ne R$) is a **maximal ideal** if there is no proper ideal $I$ of $R$ that strictly contains $M$ (i.e. we do not have the case $M \subset I \subset R$)
+	- For example, the maximal ideals of $\mathbb{Z}$ are of the form $p\mathbb{Z}$ for $p$ prime
+		- Proof: all ideals are of the form $n\mathbb{Z}$ for integer $n$; for maximality, we have if there exists some other ideal $m\mathbb{Z}$ with $n\mathbb{Z} \subset m\mathbb{Z} \subset \mathbb{Z}$, then $m = 1$. In number-theoretic terms, we have that if $m | n, m < n \implies m = 1$ - thus, $n$ must be prime,
+- For a commutative ring $R$, we have that $I \triangleleft R$ is maximal if $R/I$ is a field.
+	- we have $I = n\mathbb{Z} \triangleleft \mathbb{Z}$ maximal iff $\mathbb{Z}/n\mathbb{Z}$ is a field iff $p$ is prime
+- Given two rings $R$ and $S$, recall that we can construct the **direct product** of rings $T = R \times S$ with element wise sum and product. For rings with 1, we have that $$ 1_T = (1_R, 1_S) = \underbrace{ (1_R, 0) }_{e_1} + \underbrace{ (0, 1_S) }_{e_2}$$ Note that $e_1, e_2$ are central in $R \times S$ with $e_1^2 = e_2, e_2^2 = e_1$ and $1 = e_1 + e_2$. We say that $e_1, e_2$ are *central idempotents* of $T$. 
+- An element $e \in R$ of a ring is an **idempotent** if $e^2 = e$.
+	- For example, if $R = \mathbb{Z}$, $e = 0,1$ are central idempotents
+	- if $R = GL_n(\mathbb{R})$, the idempotents are given by $e_i = \text{diag}\{0,0,  \cdots, 1 \cdots, 0 \}$ where the $1$ is in the $i^{th}$ position; however, these are *not* central
+- Note that if $e$ is an idempotent, then $(1-e)$ is also an idempotent. If $e$ is central and $R$ has 1, then we have $R = Re \oplus R(1-e) \cong Re \times R(1-e)$ both as a sum as ideals and product of rings. We have that $e$ and $(1-e)$ are *orthogonal* (i.e. $e(1-e) = 0$). Generally, for pairwise idempotents $e_1 \cdots e_n$ in a ring $R$ satisfying $e_1 + \cdots + e_n = 1$, we can decompose the ring as $R = R e_1 \oplus R e_2 \oplus \cdots \oplus R e_n$.
+- $0, 1 \in R$ are always idempotents, it remains to find *nontrivial idempotents*. A ring $R$ is **indecomposable** if the only idemopotents in $R$ are $0$ and $1$ (we have R indecomposable iff 1 cannot be expressed as a non-trivial sum of mutually orthogonal central idempotents iff R is not a direct product of non-trivial rings iff R is not a direct sum of non-trivial ideals)
+	- For example, the ring $M_n(F)$ is indecomposable
+	- $\mathbb{Z}_{p^k}$ is indecomposable and therefore not a direct product of smaller rings
+	- $\mathbb{Z}$ is indecomposable
+- *Maschke's Theorem*: If $\text{char}(F) \not| |G|$ , then the group algebra $FG$ is semisimple (i.e. a direct sum/product of matrix rings over the field $F$).

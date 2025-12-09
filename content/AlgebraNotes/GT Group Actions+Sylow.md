@@ -6,7 +6,7 @@ description: ""
 ---
 
 # GT Group Actions+Sylow
- - for a group $G$ and a nonempty set $X$, we say that $G$ **acts on** the set $X$ or that there exists a **group action** of $G$ on $X$ if there exists a function $$\begin{align*} G \times X &\to X \\ (g,x) &\mapsto g \cdot x \end{align*}$$ such that
+ - for a group $G$ and a nonempty set $X$, we say that $G$ **acts on** the set $X$ or that there exists a **group action** of $G$ on $X$ if there exists a function $$\begin{aligned} G \times X &\to X \\ (g,x) &\mapsto g \cdot x \end{aligned}$$ such that
 	 - for each $g, h \in G$ and for each $x \in X$ we have that $g \cdot (h \cdot x) = (gh) \cdot x$
 	 - for each $x \in X$, we have that $e \cdot x = x$
  - **Examples of Group Actions**
@@ -14,7 +14,7 @@ description: ""
 	 - the group $G$ acts on the set $G$ via $g \cdot x = gx$ (left multiplication)
 	 - the group $G$ acts on the set $G$ via $g \cdot x = gxg^{-1}$ (conjugation)
 	 - for a group $G$ and any nonempty set $X$, we have the *trivial action* defined by $g \cdot x = x \; \forall g \in G \; \forall x \in X$ 
- - for group $G$, nonempty set $X$, let $S_X$ be the symmetric group on the set $X$ - then $$\begin{align*} \varphi: G &\to S_X\\ g &\mapsto \sigma_g \end{align*}$$ is a group homomorphism, called the *permutation representation* of the group action. Conversely, if $\varphi: G \to S_X$ is a group homomorphism, then the function $$\begin{align*} G \times X &\to X \\(g,x) &\mapsto g \cdot x = \varphi(g)(x)\end{align*}$$ is an action of $G$ on $X$.
+ - for group $G$, nonempty set $X$, let $S_X$ be the symmetric group on the set $X$ - then $$\begin{aligned} \varphi: G &\to S_X\\ g &\mapsto \sigma_g \end{aligned}$$ is a group homomorphism, called the *permutation representation* of the group action. Conversely, if $\varphi: G \to S_X$ is a group homomorphism, then the function $$\begin{aligned} G \times X &\to X \\(g,x) &\mapsto g \cdot x = \varphi(g)(x)\end{aligned}$$ is an action of $G$ on $X$.
  - Let $G$ be a group acting on a nonempty set $X$ and let $\varphi: G \to S_X$ be the corresponding permutation representation
 	 - Let $Y \subseteq X$. For $g \in G$, let $g \cdot Y = \{g \cdot y : y \in Y\}$. The **stabilizer in $G$ of $Y$** is $$\text{Stab}_G(Y) = G_Y =\{ g \in G: g \cdot Y = Y\}$$If $Y = \{x\}$ is a singleton, we write $\text{Stab}_G(x) = G_x$
 	 - The **fixator** in $G$ of $Y$ is the set $$ \text{Fix}_G(Y) = \{ g \in G : g \cdot y = y \; \forall y \in Y \} = \bigcap_{y \in Y} G_y $$
@@ -23,14 +23,14 @@ description: ""
 	 - the action of $G$ on $X$ is **free**, or $G$ **acts freely on $X$** if $G_x = \{ e \} \; \forall x \in X$, or if for each $x \in X$, we have that $g \cdot x = x$ only when $g = e$.
 	 - given $x \in X$, the $G$-**orbit** of $x$ is the set $G \cdot x = \{ g \cdot x : g \in G\}$.
 		 - the action of $G$ on $X$ is **transitive** if there is only one $G$-orbit in $X$
- - **Orbit-Stabilizer Theorem**: Let $G$ be a group acting on a non-empty set $X$ with $x \in X$. Then the function $$\begin{align*} \psi: G/G_x &\to G \cdot x \\ g G_x &\mapsto g \cdot x \end{align*}$$ is a bijection and therefore $[G: G_x] = |G \cdot x|$
+ - **Orbit-Stabilizer Theorem**: Let $G$ be a group acting on a non-empty set $X$ with $x \in X$. Then the function $$\begin{aligned} \psi: G/G_x &\to G \cdot x \\ g G_x &\mapsto g \cdot x \end{aligned}$$ is a bijection and therefore $[G: G_x] = |G \cdot x|$
 	 - Corollary: The distinct $G$-orbits in $X$ form a partition
 	 - Corollary: If $|X|$ finite and if $G \cdot x_1, G \cdot x_2, \cdots, G \cdot x_r$ are the distinct $G$-orbits in $X$, we have $$|X| = \sum_{i=1}^r |G \cdot x_i| = \sum_{i=1}^r [G : G_{x_i}]$$
  - ***Cayley's Theorem***: If $G$ is a finite group of order $n$, then $G$ is isomorphic to a subgroup of $S_n$.
 	 - if $G$ is a finite simple group and $H \le G$ proper subgroup with $[G:H]=n$, then $|G|$ divides $n!$
 	 - if $G$ is a finite group with $H \le G$ and $[G: H]= p$ is the smallest prime in the prime factorization of $|G|$, then $H \trianglelefteq G$
  - For a group $G$, two elements $x,y \in G$ are **conjugate** if there exists a $g \in G$ such that $y = gxg^{-1}$. Given $x \in G$, the set $G \cdot x = \{ gxg^{-1}: g \in G \}$ is the **conjugacy class** of $x$ in $G$.
-	 - for $x \in G$, we have that $$\begin{align*} \text{Stab}_G(x) &= \{ g \in G : g x g^{-1}= x\} = \{ g \in G : gx = xg \} = C_G(x)\\ &\implies |G \cdot x | = [G : \text{Stab}_G(x)] = [G: C_G(x)]\end{align*}$$
+	 - for $x \in G$, we have that $$\begin{aligned} \text{Stab}_G(x) &= \{ g \in G : g x g^{-1}= x\} = \{ g \in G : gx = xg \} = C_G(x)\\ &\implies |G \cdot x | = [G : \text{Stab}_G(x)] = [G: C_G(x)]\end{aligned}$$
 	 - note that $G \cdot x = x \iff C_G(x) = G \iff x \in Z(G)$ - we say that a conjugacy class $G \cdot x$ is *non-central* if $x \not\in Z(G)$ 
  - **The Class Equation**: Let $G$ be a finite group and $x_1 \cdots x_s$ be representatives from the distinct non-central conjugacy classes in $G$. We then have $$|G| = |Z(G)| + \sum_{i=1}^r |G \cdot x_i| = |Z(G)| + \sum_{i=1}^r [G:C_G(x_i)]$$
 	 - corollary: if $|G| = p^n$, then $Z(G) \ne \{e\}$
@@ -45,7 +45,7 @@ description: ""
 	 - We have the two automorphisms of $\mathbb{Z}$ are the identity map and the map $x \mapsto -x$; we therefore have $\text{Aut}(\mathbb{Z}) = \{ \pm 1\} \cong \mathbb{Z}_2$ 
 	 - automorphism group of abelian group need not be abelian; for example $\text{Aut}(V_4) = S_3$ (here, $V_4 = \{ e, (12)(34), (13)(24), (14)(23) \} \cong \mathbb{Z}_2 \times \mathbb{Z}_2$ is the **Klein 4-group**)
 	 - let $\mathbb{Z}_n$ be a cyclic group of order $n$ - we then have $\text{Aut}(\mathbb{Z}_n) \cong (\mathbb{Z}/n\mathbb{Z})^\times$
- - Given $g \in G$, define $$\begin{align*} \kappa_g: G &\to G \\ x &\mapsto gxg^{-1}\end{align*}$$ Note that $\kappa_g \in \text{Aut}(G)$. An automorphism $\varphi \in \text{Aut}(G)$ is called **inner** if $\varphi = \kappa_g$ for some $g \in G$. The set $$ \text{Inn}(G) = \{ \kappa_g : g \in G \} $$ is a subgroup of $\text{Aut}(G)$, called the **inner automorphism group of $G$**. 
+ - Given $g \in G$, define $$\begin{aligned} \kappa_g: G &\to G \\ x &\mapsto gxg^{-1}\end{aligned}$$ Note that $\kappa_g \in \text{Aut}(G)$. An automorphism $\varphi \in \text{Aut}(G)$ is called **inner** if $\varphi = \kappa_g$ for some $g \in G$. The set $$ \text{Inn}(G) = \{ \kappa_g : g \in G \} $$ is a subgroup of $\text{Aut}(G)$, called the **inner automorphism group of $G$**. 
 	 - for any group $G$, we have $G/Z(G) \cong \text{Inn}(G)$ and $\text{Inn}(G) \trianglelefteq \text{Aut}(G)$
 	 - $\text{Inn}(G) = \{ \text{id}_G\} \iff G = Z(G)$
 	 - $Z(G) = \{e\} \iff G \cong \text{Inn}(G)$
@@ -53,7 +53,7 @@ description: ""
 	 - as $V_4$ is abelian, $Z(V_4) = V_4$ and $\text{Inn}(V_4) \cong V_4 / Z(V_4) = \{ \text{id} \}$; however, we have $\text{Aut}(V_4) \cong S_3$
 - A subgroup $H \le G$ is a **characteristic subgroup** of $G$, denoted $H \text{ char } G$ if $\alpha(H) = H \; \forall \alpha \in \text{Aut}(G)$; i.e. $H$ is fixed by every automorphism of $G$
 	- for any group $G$, we have $Z(G) \text{ char } G$, $[G,G] \text{ char } G$ 
-	- if $U \le H \le G$  subgroups, then $$\begin{align*} H \text{ char } G &\implies H \trianglelefteq G \\ U \text{ char } H, H \text{ char } G  &\implies H U \text{ char } G  \\ U \text{ char } H, H \trianglelefteq G  &\implies U \trianglelefteq G \end{align*}$$
+	- if $U \le H \le G$  subgroups, then $$\begin{aligned} H \text{ char } G &\implies H \trianglelefteq G \\ U \text{ char } H, H \text{ char } G  &\implies H U \text{ char } G  \\ U \text{ char } H, H \trianglelefteq G  &\implies U \trianglelefteq G \end{aligned}$$
 - Sylow theorems
 	- A group of order $p^n$ is called a **p-group**
 	- a subgroup $H$ of $G$ is a **Sylow $p$-subgroup** if it is a p-group and it is maximal among the p-subgroups of  $G$ (i.e. if $P$ is a p-subgroup of $G$ with $H \le P$, then $H = P$) - the set of all Sylow p-subgroups of $G$ is denoted $\text{Syl}_p(G)$

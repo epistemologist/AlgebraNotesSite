@@ -16,15 +16,15 @@ description: ""
 | $\mathbb{Z}_2 \times \mathbb{Z}_4$   | $\langle (1,1) \rangle \cong \mathbb{Z}_4$ |
 | $\mathbb{R} \times \mathbb{Z}_5$     | $\langle (1,1)\rangle \cong \mathbb{Z}$    |
 - We define the **characteristic** of a ring $R$ to be $0$ if the characteristic ring $S \cong \mathbb{Z}$ or $n$ if $S \cong \mathbb{Z}_n$
-- For two rings $R, S$, a map $\varphi: R \to S$ is a **ring homomorphism** if $$\begin{aligned} \varphi(x+y) &= \varphi(x) + \varphi(y) \; \forall x,y \in R \\ \varphi(xy) &= \varphi(x) \varphi(y) \; \forall x,y \in R \\ \varphi(1_R) &= \varphi(1_S) && \text{$R$, $S$ have 1} \end{aligned} $$
-	- $\begin{aligned} \varphi: \mathbb{Z} &\to \mathbb{Z}/5\mathbb{Z} \\ x &\mapsto x \bmod 5\end{aligned}$ is a ring homomorphism
-	- $\begin{aligned} \varphi: \mathbb{Z} &\to \mathbb{Z} \\ x &\mapsto 3x\end{aligned}$ is *not* a ring homomorphism as $\varphi(xy) = 3xy \ne 3x \cdot 3y = \varphi(x) \varphi(y)$ 
-- Let $\varphi: R \to S$ be a ring homomorphism. Then $$ \begin{aligned}\ker \varphi = \{ x \in R : \varphi(x) = 0\} \subseteq R  \\ \text{im}\;\varphi = \{ \varphi(x) : x \in R\} \subseteq S \end{aligned}$$ are subrings.
+- For two rings $R, S$, a map $\varphi: R \to S$ is a **ring homomorphism** if $$\begin{align*} \varphi(x+y) &= \varphi(x) + \varphi(y) \; \forall x,y \in R \\ \varphi(xy) &= \varphi(x) \varphi(y) \; \forall x,y \in R \\ \varphi(1_R) &= \varphi(1_S) && \text{$R$, $S$ have 1} \end{align*} $$
+	- $\begin{align*} \varphi: \mathbb{Z} &\to \mathbb{Z}/5\mathbb{Z} \\ x &\mapsto x \bmod 5\end{align*}$ is a ring homomorphism
+	- $\begin{align*} \varphi: \mathbb{Z} &\to \mathbb{Z} \\ x &\mapsto 3x\end{align*}$ is *not* a ring homomorphism as $\varphi(xy) = 3xy \ne 3x \cdot 3y = \varphi(x) \varphi(y)$ 
+- Let $\varphi: R \to S$ be a ring homomorphism. Then $$ \begin{align*}\ker \varphi = \{ x \in R : \varphi(x) = 0\} \subseteq R  \\ \text{im}\;\varphi = \{ \varphi(x) : x \in R\} \subseteq S \end{align*}$$ are subrings.
 - Recall that if $\varphi: R \to S$ is a group homomorphism, then $\ker \varphi$ is a normal subgroup - we additionally have the property that $R \cdot \ker\varphi, \ker\varphi \cdot R \subseteq \ker \varphi$ - any subring $I \subseteq R$ with this property (i.e. $RI, IR \subseteq I$) is called an **ideal**, denoted $I \triangleleft R$. 
 	- Note if only $RI \subseteq I$, then $I$ is a **left ideal** of $R$
 	- If only $IR \subseteq I$, then $I$ is a **right ideal** of $R$.
-- Let $I \triangleleft R$ be an ideal. Then we have that $I \trianglelefteq (R, +)$ is a normal subgroup - we can therefore construct the quotient group $R / I = \{ a + I : a \in R\}$. We can similarly define multiplication on cosets: $$ \begin{aligned} \cdot : R/I \times R/I &\to R/I \\ a+I, b+I &\mapsto ab+I \end{aligned}$$ This endows $R/I$ with a ring structure - we have **quotient rings** similar to quotient groups
-- The map $$\begin{aligned}\varphi: R &\to R/I \\ a &\mapsto a+I\end{aligned}$$ is a surjective ring homomorphism with $\ker \varphi = I$; we therefore have that all ideals are kernels of some ring homomorphism.
+- Let $I \triangleleft R$ be an ideal. Then we have that $I \trianglelefteq (R, +)$ is a normal subgroup - we can therefore construct the quotient group $R / I = \{ a + I : a \in R\}$. We can similarly define multiplication on cosets: $$ \begin{align*} \cdot : R/I \times R/I &\to R/I \\ a+I, b+I &\mapsto ab+I \end{align*}$$ This endows $R/I$ with a ring structure - we have **quotient rings** similar to quotient groups
+- The map $$\begin{align*}\varphi: R &\to R/I \\ a &\mapsto a+I\end{align*}$$ is a surjective ring homomorphism with $\ker \varphi = I$; we therefore have that all ideals are kernels of some ring homomorphism.
 - Similar to the Isomorphism Theorems for groups, we also have Isomorphism Theorems for rings
 - **Fundamental Isomorphism Theorem for Rings**: For any ring homomorphism $\phi: R \to S$, we have that $R / \ker \phi \cong \text{im} \phi$ 
 - Some examples:
@@ -43,17 +43,17 @@ description: ""
 	- $\mathbb{Z}_n$ is a PIR, ($\mathbb{Z}_n$ is a PID iff $n$ is prime, in this case $Z_n$ is a field)
 	- any field is a PID
 	- $\mathbb{Z}[x]$ is a domain, *not* a PID ( for example, the ideal $(2,x)= (2)+(x) = \{ 2p(x)+xq(x): p(x), q(x) \in \mathbb{Z}[x]\}$ is not principal ) 
-- Given two ideals $I, J \triangleleft R$, we can create new ideals: $$\begin{aligned} I+J = \{ a+b: a \in I, b \in J\} &\triangleleft R \\ I \cap J &\triangleleft R \\ IJ = \left\{ \sum_{i=0}^n a_i b_i : a_i \in I, b_i \in J \right\}&\triangleleft R \end{aligned}$$
-	- for example, if $R = \mathbb{Z}$, $I = 4\mathbb{Z}$ and $J = 6\mathbb{Z}$, we have $$ \begin{aligned} I + J &= \gcd(4,6) \mathbb{Z} = 2\mathbb{Z} \\ I \cap J&= \text{lcm}(4,6)\mathbb{Z} = 12\mathbb{Z} \\ IJ &= (4\mathbb{Z})(6\mathbb{Z}) = 24 \mathbb{Z} \end{aligned}$$
-	- similarly, if $R = \mathbb{Z}_{72}$, $I = 68\mathbb{Z}_{72} = \gcd(68,72) \mathbb{Z}_{72} = 4 \mathbb{Z}_{72}$, $J = 30 \mathbb{Z}_{72} = \gcd(30,72) \mathbb{Z}_{72} = 6 \mathbb{Z}_{72}$,  then $$ \begin{aligned} I + J &= \gcd(4,6) \mathbb{Z}_{72} = 2\mathbb{Z}_{72} \cong \mathbb{Z}_{36} \\ I \cap J&= \text{lcm}(4,6)\mathbb{Z}_{72} = 12\mathbb{Z}_{72} \cong \mathbb{Z}_6 \\ IJ &= (4\mathbb{Z}_{72})(6\mathbb{Z}_{72}) = 24 \mathbb{Z}_{72} \cong \mathbb{Z}_3 \end{aligned}$$
+- Given two ideals $I, J \triangleleft R$, we can create new ideals: $$\begin{align*} I+J = \{ a+b: a \in I, b \in J\} &\triangleleft R \\ I \cap J &\triangleleft R \\ IJ = \left\{ \sum_{i=0}^n a_i b_i : a_i \in I, b_i \in J \right\}&\triangleleft R \end{align*}$$
+	- for example, if $R = \mathbb{Z}$, $I = 4\mathbb{Z}$ and $J = 6\mathbb{Z}$, we have $$ \begin{align*} I + J &= \gcd(4,6) \mathbb{Z} = 2\mathbb{Z} \\ I \cap J&= \text{lcm}(4,6)\mathbb{Z} = 12\mathbb{Z} \\ IJ &= (4\mathbb{Z})(6\mathbb{Z}) = 24 \mathbb{Z} \end{align*}$$
+	- similarly, if $R = \mathbb{Z}_{72}$, $I = 68\mathbb{Z}_{72} = \gcd(68,72) \mathbb{Z}_{72} = 4 \mathbb{Z}_{72}$, $J = 30 \mathbb{Z}_{72} = \gcd(30,72) \mathbb{Z}_{72} = 6 \mathbb{Z}_{72}$,  then $$ \begin{align*} I + J &= \gcd(4,6) \mathbb{Z}_{72} = 2\mathbb{Z}_{72} \cong \mathbb{Z}_{36} \\ I \cap J&= \text{lcm}(4,6)\mathbb{Z}_{72} = 12\mathbb{Z}_{72} \cong \mathbb{Z}_6 \\ IJ &= (4\mathbb{Z}_{72})(6\mathbb{Z}_{72}) = 24 \mathbb{Z}_{72} \cong \mathbb{Z}_3 \end{align*}$$
 - **Chinese Remainder Theorem**: If $\gcd(m,n) = 1$, then $\mathbb{Z}_{mn} \cong \mathbb{Z}_m \times \mathbb{Z}_n$
-	- Proof sketch: use the fact that the map $$\begin{aligned} \phi: \mathbb{Z} &\to \mathbb{Z}_m \times \mathbb{Z}_n \\ a &\mapsto (a \bmod m, a \bmod n) \end{aligned}$$ is a surjective ring homomorphism, then use the Fundamental Isomorphism Theorem
+	- Proof sketch: use the fact that the map $$\begin{align*} \phi: \mathbb{Z} &\to \mathbb{Z}_m \times \mathbb{Z}_n \\ a &\mapsto (a \bmod m, a \bmod n) \end{align*}$$ is a surjective ring homomorphism, then use the Fundamental Isomorphism Theorem
 - If $R = \mathbb{Q}[x,y]$, then the ideal $(x,y) = \{ x f(x,y) + y g(x,y) : f,g \in \mathbb{Q}[x,y] \}$ is not principal
 	- Proof Sketch: uses the following lemmas:
 		- Lemma: If $I \triangleleft R$ is ideal of ring with 1, then $I = R \iff I \text{ contains unit of } R$ 
 		- Note that the ideal $(x,y)$ is the set of all polynomials in $\mathbb{Q}[x,y]$ with no constant term
 		- now, using lemma - assume $(x,y)$ is generated by one element to reach a contradiction (hint: $$(x,y) = (f) \implies \begin{cases}x = A(x,y) \cdot f(x,y) \\ y = A(x,y) \cdot f(x,y) \end{cases} \implies \cdots$$)
-- For a given ring $R$ and $a \in R$, we have the natural **evaluation map** $$\begin{aligned} \varphi : R[x] &\to R \\ p(x) &\mapsto p(a) \end{aligned}$$This is a surjective ring homomorphism with $\ker \varphi = (x-a)  R[x]$, therefore by Isomorphism theorem, we have that $R[x] / (x-a) R[x] \cong R$ 
+- For a given ring $R$ and $a \in R$, we have the natural **evaluation map** $$\begin{align*} \varphi : R[x] &\to R \\ p(x) &\mapsto p(a) \end{align*}$$This is a surjective ring homomorphism with $\ker \varphi = (x-a)  R[x]$, therefore by Isomorphism theorem, we have that $R[x] / (x-a) R[x] \cong R$ 
 - We also have further isomorphism theorems (we ignore proofs - see section 7.3 of Dummit and Foote)
 	- **1st Isomorphism Theorem**: For a ring homomorphism $\varphi: R \to S$, we have $R / \ker \varphi \cong \text{im}\varphi$  
 	- **2nd Isomorphism Theorem**: Let $I, J \triangleleft R$ be ideals. Then $(I+J)/J \subseteq R/J$ is an ideal with $(I+J)/J \cong I / (I \cap J)$

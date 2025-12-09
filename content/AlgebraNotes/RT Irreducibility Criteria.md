@@ -1,0 +1,24 @@
+- For a field $F$, we have $F[x]$ is a PID and therefore a UFD - therefore, every irreducible element is prime; we list some irreducibility criteria for $F[x]$
+- *Bezout's theorem*: $p(X) \in F[X]$ divisible by $X-a$ iff $p(a) = 0$ (proof involves division theorem for polynomials)
+- $p(X) \in F[x]$ is reducible of degree 2,3 iff $p$ has a root in $F$ 
+	- $p(X) \in F[x]$ with degree 2,3 is irreducible iff it has a root in $F$
+	- Example: $x^2 - 3 \in \mathbb{Q}[x]$ is irreducible as it has no root in $\mathbb{Q}$
+- **Fundamental Theorem of Algebra**: Every $p(x) \in \mathbb{C}[x]$ admits a root.
+	- Corollary: Every $p(x) \in \mathbb{C}[x]$ factors completely into linear factors (induction by degree)
+	- Corollary: $p(x) \in \mathbb{C}[x]$ is irreducible iff $\deg{p} = 1$
+	- Corollary: irreducible polynomials in $\mathbb{R}[x]$ are linear and quadratics with negative discriminant (roots come in conjugate pairs)
+- **Gauss's Lemma**: $f(x) \in \mathbb{Z}[x]$ irreducible iff $f(x) \in \mathbb{Q}[x]$ irreducible
+	- Example: $x^2-3 \in \mathbb{Z}[x]$ is irreducible as it is irreducible in $\mathbb{Q}[x]$
+- **Rational Root Test**: if $f(x) = a_0 + a_1 x + \cdots + a_n x^n \in \mathbb{Z}[x]$ has a rational root $\alpha = a/b$, then $a| a_0, b|a_n$ (Proof sketch: plug in $\alpha = a/b$ and multiply by $b^n$)
+- We can show that higher degree polynomials are irreducible with casework: for example, we show that $f(x) = x^4 + x^3 - 3x + 5$ is irreducible in $\mathbb{Q}[x]$
+	- we next show that there does not exist a factorization $f(x) = g(x) h(x)$ and break into cases based on degree of $g(x)$ (WLOG, let $\deg g \le \deg h$)
+		- $\deg g = 1$: then $f$ must admit a rational root; this cannot happen by Rational Root Theorem
+		- $\deg g=2, \deg h=2$:  it suffices to show that such a factorization does not exist for $g,h \in \mathbb{Z}[x]$ by Gauss's lemma - WLOG let $g(x) = x^2+ax+b, h(x) = x^2+cx+d$; then $$ \begin{align*} f(x) &= (x^2+ax+b)(x^2+cx+d) = x^4 + (a+c)x^3 + (ac+b+d)x^2 + (ac+bd)x + bd \\ &\implies \begin{cases} a+c=0 \\ ac+b+d = 1 \\ ac+bd = -3 \\ bd = 5 \end{cases} \end{align*}$$ has no solutions in $\mathbb{Z}$
+- *reduction mod $p$*: For a prime $p$, the map $$\begin{align*}\varphi: \mathbb{Z}[x] &\to  \mathbb{Z}_p[x] \\ \sum_i a_i x^i &\mapsto \sum_i \bar{a_i} x^i \end{align*}$$ is a ring homomorphism. We also have that $\bar{f}(x) = \varphi(f(x))$ irreducible in $\mathbb{Z}_p[x] \implies$ $f(x) \in \mathbb{Z}[x]$ is irreducible
+	- Example: $3 - 7x - 11x^3 \in \mathbb{Z}[x]$ is irreducible as $1-x-x^3 \in \mathbb{Z}_2[x]$ is irreducible
+- **Eisenstein's criterion**: Let $f(x) =a_0 + a_1 x + \cdots a_n x^n$. For prime $p$, we have $$ \begin{cases} p \not| a_n \\ p | a_0, a_1, \cdots a_{n-1} \\ p^2 \not| a_0
+- \end{cases} \implies \text{$f$ irreducible} $$
+	- Example: $\Phi_p(x) = 1 + x + \cdots + x^{p-1}$ is irreducible in $\mathbb{Z}[x]$ for prime $p$ (this is the $p^{th}$ **cyclotomic polynomial**)
+	- We have similarities between $\Phi_p(x)$ and the totient function $\phi(n)$ in $\mathbb{Z}$
+		- for example, we have $\sum_{d | n} \phi(n) = n$ and the corresponding identity $x^n - 1 = \prod_{d | n} \Phi_d(x)$ 
+		- similarly, we have the identity $\sum_{ d | n } \mu(d)\phi(n/d) = \phi(n)$  and the corresponding identity $x^n-1 = \prod_{d|n} (x^d-1)^{\mu(n/d)}$, where $\mu$ is the Mobius function

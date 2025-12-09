@@ -1,0 +1,46 @@
+---
+title: RT ...
+draft: false
+tags: []
+description: ""
+---
+- A subset $D$ of a commutative ring $R$ is a **denominator subset** if $0 \not\in D$, $D$ has no zero divisors and $D$ is multiplicative (i.e. $\forall a,b \in D \; ab \in D$)
+	- For example, $R$ domain, we can take $D = R \setminus \{ 0 \}$
+	- For a ring $R$ and a non-zero divisor $x \in R \setminus \{ 0\}$, we can take $D = \{ 1,x,x^2, \cdots \}$
+	- For $P \subseteq R$ prime ideal, we can take $D = R \setminus P$
+- For a commutative unitary ring $R$ and a denomiator set $D \subseteq R$, there exists a unique (up to isomorphism) ring $S$ with $S \supseteq R$ and $D \subseteq U(S)$ - the ring $S$ is called the **ring of fractions** of $R$ with denominators $D$ and $S = R D^{-1}$.
+	- For example, for a domain $R$, $D = R \setminus \{ 0\}$, $RD^{-1} =$ the **field of fractions of $R$**
+	- $R = \mathbb{Z}, D = \mathbb{Z} \setminus \{ 0 \} \implies RD^{-1} = \mathbb{Q}$
+	- $R$ ring with 1, $x \in R$ not a zero divisor and $D = \{ 1, x, x^2, \cdots\}$ $\implies RD^{-1} = \{\frac{r}{x^k}: r \in R, k \ge 0 \}$
+	- If $P \triangleleft R$ is a prime ideal, then $D = R \setminus P$ is a denomiator set and $RD^{-1}$ is denoted $R_P$ and called the *localization* of $R$ at $P$. It is a ring with a single nontrivial ideal $I = PD^{-1} = \{ p/d: p \in P, d \in D\}$ 
+- A commutative unitary domain $R$ is called **Euclidean** if there exists a **norm function** $N: R \to \mathbb{Z}_{\ge 0}$ such that $N(0) = 0$ and $\forall a,b \in R \; \exists q, r \in R \; a = qb + r$ with $r=0$ or $N(r) < N(b)$
+	- $\mathbb{Z}$ is  Euclidean  with norm function $N(x) = |x|$ 
+	- $\mathbb{Z}[i]$ (the *Gaussian integers*) is Euclidean  with norm function $N(x+iy) = x^2+y^2$
+	- any field $F$ is Euclidean with norm $N(x) = \begin{cases} 1 & x \ne 0 \\ 0 & x = 0 \end{cases}$
+	- $\mathbb{Z}[\sqrt{2}] = \{ a + b \sqrt{2} : a, b \in \mathbb{Z} \}$ is a Euclidean with norm $N(a + b\sqrt{2}) = a^2+2b^2$
+	- for any field $F$, $F[x]$ is Euclidean with norm $N(p(x)) = \deg(p(x))$ 
+- Note that given a nor, we can develop a division algorithm
+- **All Euclidean domains are PIDs**
+	- We therefore have $\mathbb{Z}$, any field $F$, $F[x]$, $\mathbb{Z}[i]$ are all PIDs
+- Example; $\mathbb{Z}[i \sqrt{5}] = \{ a + bi\sqrt{5} : a,b \in \mathbb{Z} \}$ not PID as we have $I = (3, 2+i\sqrt{5}) \triangleleft \mathbb{Z}[i\sqrt{5}]$ is not principal
+	- Proof Sketch: Assume $I = (a+bi\sqrt5)$ is principal - then $$\begin{align*} 2+i\sqrt{5} &=  (a+bi\sqrt{5})(c+di\sqrt{5}) \\ \implies N(2+i\sqrt{5}) = 9 &= N(a+bi\sqrt{5})N(c+di\sqrt{5}) \\ \implies 9&= \underbrace{ (a^2+5b^2)}_{\in \mathbb{Z}_{\ge 0}}\underbrace{ (c^2+5d^2) }_{\in \mathbb{Z}_{\ge 0}} \end{align*}$$ However, it can be shown via casework that the above equation has no solutions
+- Note for any ring $R$, we have that any maximal ideal is a prime ideal (I maximal ideal => R/I field => R/I domain => I prime ideal); in a PID, we have the converse is true - every non-zero prime ideal is maximal
+- For any field $F$, we must have that $F[x]$ is a PID; we also have the converse is true - i.e. if $R[x]$ is a PID, then $R$ must be a field.
+- Recall a number $p$ is prime if it has no divsiors other than 1 and itself; i.e. it cannot be written as a product of two non-units - similarly, a non-zero $p \in R$ is **prime** if $p | ab \implies p|a \text{ or } p | b$ 
+- Similarly, an element $r \in R$ domain is **irreducible** if $\forall a,b \in R$ with $ab = r$, one of $a,b$ is a unit.
+- some corollaries about prime and irreducible elements
+	- all prime elements are irreducible
+	- in a PID, every irreducible element is prime
+	- in a PID, we have $$ \begin{align*} \text{$a$ irreducible} &\iff \text{$(a)$ maximal}\\ \text{$a$ prime} &\iff \text{$(a)$ prime} \end{align*}$$
+- An integral domain $R$ is a **unique factorization domain (UFD)** if every element can be expressed as a product $a = r_1 r_2 r_3 \cdots r_n u$ of irreducibles $r_i$ and unit $u$. (This representation is unique up to unit multiple of each factor $r_i$ and permutation of the $r_i$'s)
+	- all fields are UFDs as every non-zero element is a unit
+	- **all PIDs are UFDs**
+	- in fact, **all UFDs all PIDs** (proof involves inductive construction of unique factorization)
+- prime elements of Gaussian integers
+	- *Fermat's theorem on sum of squares*: If $p$ is prime, then $p = a^2 + b^2 \iff p=2 \text{ or } p \equiv 1 \bmod 4$ 
+	- we also have the identity $(a^2+b^2)(p^2+q^2) = (ap+bq)^2 + (aq-bp)^2$
+	- From these, we can deduce the prime elements of $\mathbb{Z}[i]$ are
+		- all primes $p = 4k+3$
+		- $1+i$
+		- $a+bi, a-bi$ with $p=a^2+b^2$ prime of the form $4k+1$
+	- Proof Sketch: the norm $N(a+bi) = a^2+b^2$ on the Gaussian integers is multiplicative, so $a+bi$ prime in Gaussian integers $\implies$ $N(a+bi)$ is a prime in the integers; now break into cases (p = 2, 4k+1, 4k+3)

@@ -1,0 +1,37 @@
+- types of questions
+	- 1) describe a field extension (either over $\mathbb{Q}/\mathbb{Q}[\sqrt{2}]$ or a finite field; e.g. $\mathbb{Q}(\alpha, \beta)$, or splitting field of a polynomial
+		- here the description is given by either degree or basis
+	- 2) describe the Galois group
+		- if size is small, explicitly identify the group
+		- show group is abelian/nonabelian
+		- example: $F = \mathbb{Q}, K = \mathbb{Q}(\sqrt{2}, \sqrt{3})$, find $\text{Gal}(K / \mathbb{Q}(\sqrt{2}))$ 
+- Example: $\mathbb{Q}(\sqrt[3]{2}, \sqrt{3}), \mathbb{Q}(\sqrt{2}, i), \mathbb{Q}(\sqrt{2}, \sqrt{3}) = \mathbb{Q}(\sqrt{2}+\sqrt{3})$, splitting field of $x^4-2$ over $\mathbb{Q}$, splitting field of $x^3-5$ over $\mathbb{Q}$
+	- note $[\mathbb{Q}[(\sqrt[3]{2}, \sqrt{3}) : \mathbb{Q}] = 6$ as the degree of the two extensions are coprime 
+		- $$\begin{array}{ccccc}  && \mathbb{Q}(2^{1/3}, \sqrt3)&& \\  & \diagup &  &  \diagdown& \\ \mathbb{Q}(2^{1/3})& &  & & \mathbb{Q}(\sqrt3) \\ & \diagdown &  &  \diagup &  \\ && \mathbb{Q} && \end{array}$$
+		- we have $[Q(\sqrt{3}) : Q] = \deg \underbrace{ x^2-3}_{\text{irreducible}} = 3$ and similarly, $[Q(\sqrt[3]{2}), Q] = \deg x^3-2 = 3 = 3$
+		- note also we have that $[K : Q(\sqrt{3})] \le 3$ as $x^3-2 \in Q(\sqrt{3})[x] \implies [K : Q(\sqrt3)] \le \deg x^3-2 = 3$ 
+		- we now use the *Tower Rule for Field Extensions*: $[K : Q] = \underbrace{ [K : Q(\sqrt{3})]}_{\le 3} \cdot \underbrace{ [Q(\sqrt{3}): Q] }_{=2} \le 6$ and similarly, $[K: Q] = \underbrace{ [K : Q(\sqrt[3]{2})]}\cdot [Q(\sqrt[3]{2}): Q]$, so the degree is divisible by 3. 
+	- example: $K = \mathbb{Q}(\sqrt2 , i)$
+		- we have the field extensions $Q \underbrace{ \le }_{\deg = 2} Q(\sqrt{2}) \underbrace{ \le }_{\deg \le 2 (\star)} Q(\sqrt{2}, i)$  
+		- $(\star) \implies$ degree is 1 or 2, we show degree cannot be 1
+			- $i$ is a root of $x^2+1 \in Q(\sqrt2)$; however since $i \not\in R$ we have that $i \notin Q(\sqrt2)$
+			- or $x^2+1$ has no roots in $R$ and therefore no roots in $Q(\sqrt{2}) \subseteq R$,  therefore, this polynomial is irreducible in $Q(\sqrt2)$ 
+		- now use Tower Rule to show that degree of total extension is 4
+	- example: $K = \mathbb{Q}(\sqrt2, \sqrt3)$
+		- note that $[K : Q] = \underbrace{ [K : Q(\sqrt2)] }_{\le 2} \cdot \underbrace{ [Q(\sqrt2) : Q] }_{=2} \le 4$
+		- we show that $[K : Q(\sqrt2)] = 2$
+			- show that $\sqrt3 \not\in Q(\sqrt2)$ and therefore $x^2-3$ is of degree 2 with no roots in $Q(\sqrt2)$ and therefore irreducible (algebra bashing)
+			- show that $Q(\sqrt2, \sqrt3) = Q(\sqrt2 + \sqrt3)$ (more algebra), then show that polynomial of $\sqrt{2}+\sqrt{3}$ over $Q$ with degree 4 is irreducible
+			- show that $K/Q$ is a *Galois* extension ($\iff$ splitting field of separable polynomial (no repeated roots)) and then show that $\text{Gal}(K/Q) = 4$
+	- note, over a field with characteristic 0, all irreducible polynomials are separable
+		- for the field $F = \mathbb{F}_2(t)$, the polynomial $f = x^2-t$ is not separable and not Galois; however it is a splitting field
+	- example: $K =$ splitting field of $x^3-5$ over $Q$
+		- we have that $K = Q(5^{1/3}, 5^{1/3} \omega, 5^{1/3} \omega^2)$  where $\omega^3=1$ is a primitive root of 1
+		- we claim that $K = Q(5^{1/3}, \omega)$ (check $\subseteq, \supseteq$ with generators)
+		- now use Tower Rule; we have $$Q \underbrace{ \subseteq }_{\substack{\deg = 3 \\ \text{min poly: $x^3-5$}}} Q(5^{1/3}) \underbrace{ \subseteq }_{\substack{\deg=2 \\ \text{ min poly: $x^2+x+1$}} } Q(5^{1/3}, \omega)$$
+		- degrees are coprime; therefore total degree of extension is $3 \cdot 2 = 6$
+	- example: splitting field of $x^8-2$ over $Q$
+		- we have $K = Q(2^{1/8}, 2^{1/8} \xi, 2^{1/8} \xi^2, \cdots, 2^{1/8} \xi^7)$ where $\xi^8=1$ is primitive root of unity
+		- note that $K = Q(2^{1/8}, \xi)$ (check containment of generators)
+		- let $\xi = \frac{\sqrt2}{2} + i\frac{\sqrt{2}}{2}$, we in fact have that $K = Q(2^{1/8}, i)$
+		- using Tower Rule, we have the total degree of the extension is $8 \cdot 2 = 16$

@@ -1,3 +1,11 @@
+---
+title: Review Meeting Notes - Field Theory + Galois Theory
+draft: false
+tags: []
+description: ""
+---
+
+# Review Meeting Notes - Field Theory + Galois Theory
 - types of questions
 	- 1) describe a field extension (either over $\mathbb{Q}/\mathbb{Q}[\sqrt{2}]$ or a finite field; e.g. $\mathbb{Q}(\alpha, \beta)$, or splitting field of a polynomial
 		- here the description is given by either degree or basis

@@ -1,2 +1,2 @@
-- A set $M$ is a **left module** over a ring $R$ (a left $R$-module) if $(M, +)$ is an abelian group and we have an operation $\cdot : R \times  M \to M$ satisfying $$\begin{align*} r \cdot (x+y) = r \cdot x + r \cdot  y \\ (r + s) \cdot x = r\cdot x + s \cdot x \\ (r \cdot s)  \cdot x = r \cdot (s \cdot x) \\ 1 \cdot x = x\end{align*}$$ for all $r, s \in R$ and all $x,y \in M$.
+- A set $M$ is a **left module** over a ring $R$ (a left $R$-module) if $(M, +)$ is an abelian group and we have an operation $\cdot : R \times  M \to M$ satisfying $$\begin{aligned} r \cdot (x+y) = r \cdot x + r \cdot  y \\ (r + s) \cdot x = r\cdot x + s \cdot x \\ (r \cdot s)  \cdot x = r \cdot (s \cdot x) \\ 1 \cdot x = x\end{aligned}$$ for all $r, s \in R$ and all $x,y \in M$.
 - 

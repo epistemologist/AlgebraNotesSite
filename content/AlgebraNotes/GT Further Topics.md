@@ -13,8 +13,8 @@ description: ""
  - some facts/examples about solvable / nilpotent groups
 	 - $G$ solvable of class 1 iff G nilpotent of class 1 iff G abelian; G nilpotent of class 2 iff $[G,G] \le Z(G)$
 	 - $G$ abelian $\implies$ G nilpotent $\implies$ G solvable (reverse implications do not hold)
-	 - $Q_8$ is nilpotent of class 2 - $$\begin{aligned} Q_8^{[1]} &= [Q_8, Q_8] = Z(Q_8) = \{ \pm 1\} \\ Q_8^{[2]} &= [Q_8, Z(Q_8)] = \{ e\}  \end{aligned}$$
-	 - $S_3$ is solvable: $$\begin{aligned}S_3^{(1)} &= [S_3, S_3] = A_3\\ S_3^{(2)} &= [A_3, A_3] = \{ e\} \end{aligned}$$ however, $S_3$ is not nilpotent: $$ \begin{aligned} S_3^{[1]} &= [S_3, S_3] = A_3 \\ S_3^{[n]} &= [S_3, A_3] = A_3 && (\forall n>1) \end{aligned} $$
+	 - $Q_8$ is nilpotent of class 2 - $$\begin{align*} Q_8^{[1]} &= [Q_8, Q_8] = Z(Q_8) = \{ \pm 1\} \\ Q_8^{[2]} &= [Q_8, Z(Q_8)] = \{ e\}  \end{align*}$$
+	 - $S_3$ is solvable: $$\begin{align*}S_3^{(1)} &= [S_3, S_3] = A_3\\ S_3^{(2)} &= [A_3, A_3] = \{ e\} \end{align*}$$ however, $S_3$ is not nilpotent: $$ \begin{align*} S_3^{[1]} &= [S_3, S_3] = A_3 \\ S_3^{[n]} &= [S_3, A_3] = A_3 && (\forall n>1) \end{align*} $$
 	 - other examples: $S_4, A_4$ solvable but not nilpotent; $S_5, A_5$ not solvable
 	 - **Burnside Theorem**: If $|G| = p^m q^n$, then $G$ solvable
 	 - **Feit-Thompson Theorem**: If $|G|$ is odd, then $G$ is solvable

@@ -23,7 +23,7 @@ description: ""
 - **All Euclidean domains are PIDs**
 	- We therefore have $\mathbb{Z}$, any field $F$, $F[x]$, $\mathbb{Z}[i]$ are all PIDs
 - Example; $\mathbb{Z}[i \sqrt{5}] = \{ a + bi\sqrt{5} : a,b \in \mathbb{Z} \}$ not PID as we have $I = (3, 2+i\sqrt{5}) \triangleleft \mathbb{Z}[i\sqrt{5}]$ is not principal
-	- Proof Sketch: Assume $I = (a+bi\sqrt5)$ is principal - then $$\begin{aligned} 2+i\sqrt{5} &=  (a+bi\sqrt{5})(c+di\sqrt{5}) \\ \implies N(2+i\sqrt{5}) = 9 &= N(a+bi\sqrt{5})N(c+di\sqrt{5}) \\ \implies 9&= \underbrace{ (a^2+5b^2)}_{\in \mathbb{Z}_{\ge 0}}\underbrace{ (c^2+5d^2) }_{\in \mathbb{Z}_{\ge 0}} \end{aligned}$$ However, it can be shown via casework that the above equation has no solutions
+	- Proof Sketch: Assume $I = (a+bi\sqrt5)$ is principal - then $$\begin{align*} 2+i\sqrt{5} &=  (a+bi\sqrt{5})(c+di\sqrt{5}) \\ \implies N(2+i\sqrt{5}) = 9 &= N(a+bi\sqrt{5})N(c+di\sqrt{5}) \\ \implies 9&= \underbrace{ (a^2+5b^2)}_{\in \mathbb{Z}_{\ge 0}}\underbrace{ (c^2+5d^2) }_{\in \mathbb{Z}_{\ge 0}} \end{align*}$$ However, it can be shown via casework that the above equation has no solutions
 - Note for any ring $R$, we have that any maximal ideal is a prime ideal (I maximal ideal => R/I field => R/I domain => I prime ideal); in a PID, we have the converse is true - every non-zero prime ideal is maximal
 - For any field $F$, we must have that $F[x]$ is a PID; we also have the converse is true - i.e. if $R[x]$ is a PID, then $R$ must be a field.
 - Recall a number $p$ is prime if it has no divsiors other than 1 and itself; i.e. it cannot be written as a product of two non-units - similarly, a non-zero $p \in R$ is **prime** if $p | ab \implies p|a \text{ or } p | b$ 
@@ -31,7 +31,7 @@ description: ""
 - some corollaries about prime and irreducible elements
 	- all prime elements are irreducible
 	- in a PID, every irreducible element is prime
-	- in a PID, we have $$ \begin{aligned} \text{$a$ irreducible} &\iff \text{$(a)$ maximal}\\ \text{$a$ prime} &\iff \text{$(a)$ prime} \end{aligned}$$
+	- in a PID, we have $$ \begin{align*} \text{$a$ irreducible} &\iff \text{$(a)$ maximal}\\ \text{$a$ prime} &\iff \text{$(a)$ prime} \end{align*}$$
 - An integral domain $R$ is a **unique factorization domain (UFD)** if every element can be expressed as a product $a = r_1 r_2 r_3 \cdots r_n u$ of irreducibles $r_i$ and unit $u$. (This representation is unique up to unit multiple of each factor $r_i$ and permutation of the $r_i$'s)
 	- all fields are UFDs as every non-zero element is a unit
 	- **all PIDs are UFDs**
